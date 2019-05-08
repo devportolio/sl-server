@@ -1,0 +1,18 @@
+input Credential {
+  email: String!
+  password: String!
+}
+
+type LoginResponse {
+  token: String!
+  refreshToken: String
+}
+
+type Mutation {
+  userLogin(credential: Credential): LoginResponse
+  userLogout(refreshToken: String!): Boolean!
+}
+
+type Query {
+  refreshToken(refreshToken: String!): String
+}
