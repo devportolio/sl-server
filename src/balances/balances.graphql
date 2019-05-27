@@ -1,0 +1,23 @@
+enum PaymentTypes {
+  CASH_IN
+  CASH_OUT
+  CONTRIBUTION
+  LOAN_PAYMENT
+  LOAN_RELEASE
+}
+
+type Balance {
+  id: ID
+  userId: String
+  amount: Float
+  paymentType: PaymentTypes
+}
+
+type Query {
+  allBalances(userId: String): [Balance]
+}
+
+type Mutation {
+  createBalance(amount: Float!, paymentType: PaymentTypes!): Balance
+  deleteBalance(balanceId: String!): Boolean
+}

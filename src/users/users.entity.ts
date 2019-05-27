@@ -1,8 +1,7 @@
-import { RefreshToken } from 'src/refresh-token/refresh-token.entity';
+import { BaseEntity } from './../shared/base.entity';
 import {
   Entity,
   Column,
-  PrimaryGeneratedColumn,
   BeforeInsert,
   BeforeUpdate,
   AfterLoad,
@@ -11,10 +10,7 @@ import {
 import * as bcrypt from 'bcrypt';
 
 @Entity()
-export class Users {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Users extends BaseEntity {
   @Column({ length: 50 })
   firstname: string;
 

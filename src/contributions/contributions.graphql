@@ -1,0 +1,18 @@
+type Contribution {
+  id: ID
+  numberOfShare: Int
+  amountPerShare: Int
+  totalPayables: Int
+  loanLimit: Int
+  guarantorLimit: Int
+  isDone: Boolean
+  createdAt: String
+}
+
+type Query {
+  allContributions(userId: Int!): [Contribution]
+}
+
+type Mutation {
+  addContribution(numberOfShare: Int!): Contribution
+}

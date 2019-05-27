@@ -6,6 +6,9 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { RefreshTokenModule } from './refresh-token/refresh-token.module';
+import { ContributionsModule } from './contributions/contributions.module';
+import { SystemSettingsModule } from './system-settings/system-settings.module';
+import { BalancesModule } from './balances/balances.module';
 
 @Module({
   imports: [
@@ -16,6 +19,7 @@ import { RefreshTokenModule } from './refresh-token/refresh-token.module';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.MSQL_HOST,
+      // tslint:disable-next-line: radix
       port: parseInt(process.env.MSQL_PORT),
       username: process.env.MSQL_USERNAME,
       password: process.env.MSQL_PASSWORD,
@@ -26,6 +30,9 @@ import { RefreshTokenModule } from './refresh-token/refresh-token.module';
     UsersModule,
     AuthModule,
     RefreshTokenModule,
+    ContributionsModule,
+    SystemSettingsModule,
+    BalancesModule,
   ],
 
   controllers: [AppController],

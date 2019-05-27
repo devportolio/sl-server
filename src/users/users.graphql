@@ -21,7 +21,7 @@ type User {
 
 type Query {
   allUsers: [User]
-  getUser(userId: String!): User
+  getUser(userId: Int!): User
 }
 
 type Mutation {
